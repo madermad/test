@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\Comments;
 use app\models\ContactForm;
 
 class SiteController extends Controller
@@ -49,7 +50,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $comments= new Comments();
+        $comments=Comments::find()->where(['content_id'=>1])->orderBy(['created'=> SORT_ASC])->all();
+        
+        return $this->render('index',  [
+                'model' => $comments,
+            ]);
     }
 
     public function actionLogin()
