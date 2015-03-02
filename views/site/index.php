@@ -1,7 +1,5 @@
 <?php
 /* @var $this yii\web\View */
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 $this->title = 'Тестовый проект комменариев';
 ?>
 <div class="site-index">
@@ -60,27 +58,7 @@ $this->title = 'Тестовый проект комменариев';
             </div>
                     <?php  //  var_dump($m->attributes);
                     $i++;}?>
-            <div class="comments-form">
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($new, 'id')->textInput() ?>
-
-    <?= $form->field($new, 'body')->textInput(['maxlength' => 300]) ?>
-
-    <?= $form->field($new, 'content_id')->textInput() ?>
-
-    <?= $form->field($new, 'created')->textInput() ?>
-
-    <?= $form->field($new, 'user_name')->textInput(['maxlength' => 100]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($new->isNewRecord ? 'Create' : 'Update', ['class' => $new->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
+            
         </div>
        
     </div>
