@@ -50,7 +50,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $comments = new Comments();
         $new = new Comments();
         $comments = Comments::find()->where(['content_id' => 1])->orderBy(['created' => SORT_ASC])->all();
         return $this->render('index', [
