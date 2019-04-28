@@ -48,8 +48,6 @@ class CommentsController extends Controller
      */
     public function actionView($id)
     {
-        $guest = Yii::$app->user->isGuest;
-
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
